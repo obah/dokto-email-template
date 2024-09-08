@@ -17,7 +17,6 @@ const htmlTemplate = render(
     name={data.name}
     mailBody={data.mailBody}
     title={data.title}
-    variant="congratulation"
   />,
   {
     pretty: true,

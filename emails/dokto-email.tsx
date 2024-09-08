@@ -19,7 +19,6 @@ interface Props {
   previewText: string;
   name: string;
   mailBody: string;
-  variant?: "default" | "congratulation";
   title?: string;
 }
 
@@ -37,13 +36,7 @@ function formatDate(date: Date) {
 
 const date = formatDate(new Date());
 
-const DoktoEmail = ({
-  previewText,
-  name,
-  mailBody,
-  variant = "default",
-  title,
-}: Props) => (
+const DoktoEmail = ({ previewText, name, mailBody, title }: Props) => (
   <Html>
     <Head>
       <Font
@@ -94,26 +87,6 @@ const DoktoEmail = ({
               alt="Dokto's Logo"
               className="mx-auto"
             />
-
-            {variant === "congratulation" && (
-              <>
-                <Img
-                  src={`${baseUrl}/static/celebrating.svg`}
-                  width="78"
-                  height="126"
-                  alt="confetti"
-                  className="absolute left-0 top-16"
-                />
-
-                <Img
-                  src={`${baseUrl}/static/celebrating.svg`}
-                  width="78"
-                  height="126"
-                  alt="confetti"
-                  className="absolute right-0 top-16"
-                />
-              </>
-            )}
 
             {title && (
               <Heading className="text-center font-medium mt-4 text-sm">
